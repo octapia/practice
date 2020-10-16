@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "mailer.js",
+  "type":"module",
   "scripts": {
     "start": "nodemon mailer.js"
   },
