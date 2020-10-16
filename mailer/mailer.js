@@ -1,19 +1,19 @@
 var nodemailer = require('nodemailer');
 
-
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'Gmail',
+  host: 'smtp.gmail.com',
   auth: {
-    user: 'hmdiftakher@gmail.com',
-    pass: 'yourpassword'
+    user: 'mister.sakil.cse@gmail.com',
+    pass: 'your-email-password'
   }
 });
 
 var mailOptions = {
-  from: 'hmdiftakher@gmail.com',
-  to: 'iftakher.tec@yahoo.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
+  from: 'mister.sakil.cse@gmail.com',  
+  to: 'hmdiftakher@gmail.com,sakilorb@icloud.com',  
+  subject: 'Sending Email using Node.js, Nodemailer and sakil',
+  text: 'Ki vai apnar nodemailer kaj kortesey?'
 };
 
 transporter.sendMail(mailOptions, function(error, info){
@@ -22,4 +22,4 @@ transporter.sendMail(mailOptions, function(error, info){
   } else {
     console.log('Email sent: ' + info.response);
   }
-});
+});  
