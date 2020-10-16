@@ -57,4 +57,11 @@ const playButton = document.querySelector(".playButton");
 
 playButton.addEventListener("click", () => {
    playButton.classList.add("playButton-spinner");
+   document.querySelector(".video-banner").style.background = "black";
+   document.querySelector(".video-footer").style.display = "none";
+   setTimeout(() => {
+      playButton.style.transition = "0s all";
+      playButton.classList.remove("playButton-spinner");
+      document.querySelector(".popup").classList.add("popup-block");
+   }, 5000);
 });

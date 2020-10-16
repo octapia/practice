@@ -1,5 +1,6 @@
 @import "./url";
 @import "./variable";
+@import "./mixing";
 
 body {
    font-family: $openSans;
@@ -22,6 +23,10 @@ h1 {
    color: white;
    font-weight: normal;
    margin-bottom: 2rem;
+}
+a {
+   text-decoration: none;
+   color: unset;
 }
 
 .video:fullscreen {
@@ -56,7 +61,7 @@ h1 {
       }
       &:hover {
          .playButton {
-            border-color: #c00;
+            border-color: $c00;
             i {
                opacity: 1;
                transform: scale(1, 1);
@@ -65,10 +70,7 @@ h1 {
       }
 
       .playButton {
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
+         @include meddle();
          border: 5px solid;
          border-color: #c000;
          border-radius: 50%;
@@ -89,7 +91,7 @@ h1 {
       .playButton-spinner {
          top: 42.1%;
          left: 46.4%;
-         border-color: #c00;
+         border-color: $c00;
          border-right-color: transparent !important;
          animation: three-quarters-loader 1s infinite linear;
          transition: 0s all;
@@ -126,7 +128,7 @@ h1 {
                border-radius: 50%;
                height: 10px;
                width: 10px;
-               background: #c00;
+               background: $c00;
                display: block;
                animation: blinker 1.5s cubic-bezier(0.5, 0, 1, 1) infinite
                   alternate;
@@ -165,7 +167,7 @@ h1 {
                   padding: 5px 15px;
                }
                .active {
-                  background: #c00;
+                  background: $c00;
                }
             }
             .active-ql {
@@ -184,6 +186,143 @@ h1 {
          &:hover {
             color: white;
          }
+      }
+   }
+}
+section.popup.popup-block {
+   display: block;
+}
+
+.popup {
+   display: none;
+   position: fixed;
+   background: black;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+   overflow-y: auto;
+   box-sizing: border-box;
+   font-family: $oswald;
+   &-overly {
+      background: #00000069;
+      height: 100%;
+      display: block;
+      width: 100%;
+   }
+   &-content {
+      background: url(../images/banner.jpg);
+      background-position: center;
+      background-size: cover;
+      display: block;
+      @include meddle();
+      text-align: center;
+      width: 700px;
+      height: 439px;
+      background-repeat: no-repeat;
+      box-sizing: border-box;
+      overflow: hidden;
+      &:hover {
+         .attention {
+            left: -100%;
+         }
+         ul {
+            left: 0;
+         }
+      }
+
+      h2 {
+         font-size: 20px;
+         text-transform: uppercase;
+         background-color: rgba(0, 0, 0, 0.8);
+         color: #fff;
+         margin: 0;
+         padding: 15px 0px;
+         display: block;
+      }
+   }
+   &-footer {
+      padding: 10px 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+   }
+   .btn {
+      background: $c00;
+      border: 0;
+      height: 54px;
+      color: #fff;
+      height: 54px;
+      outline: none !important;
+      color: #fff;
+      padding: 15px 20px 15px 70px;
+      font-family: $oswald;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 1px #000;
+      text-transform: uppercase;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+         background: darken($c00, 10%);
+      }
+   }
+   .btn-bg {
+      background-color: white;
+      height: 100%;
+      width: 64px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      &:before {
+         content: "";
+         background: #333;
+         width: 63px;
+         height: 100%;
+         position: absolute;
+         left: 0;
+         top: 0;
+         clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+      }
+      i {
+         font-weight: 900;
+         color: #fff;
+         position: relative;
+         z-index: 99;
+      }
+   }
+   .attention-common {
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      bottom: 73px;
+      padding: 10px 15px;
+      text-align: left;
+      text-transform: uppercase;
+      color: #ccc;
+      width: 50%;
+      transition: 0.3s all;
+   }
+   ul {
+      left: -100%;
+      margin: 0;
+      li {
+         color: #fff;
+         i {
+            margin-right: 5px;
+         }
+      }
+   }
+   .attention {
+      left: 0;
+      strong {
+         color: #fff;
       }
    }
 }
