@@ -13,7 +13,9 @@ body {
    width: 75%;
    margin: 0 auto;
 }
-
+ul {
+   list-style: none;
+}
 h1 {
    font-family: $oswald;
    text-align: center;
@@ -110,6 +112,29 @@ h1 {
                top: -5px;
                width: 17px;
                right: 0px;
+            }
+            .ql {
+               position: absolute;
+               top: -64px;
+               left: -139px;
+               z-index: 1000;
+               display: none;
+               min-width: 160px;
+               padding: 5px 0;
+               margin: 2px 0 0;
+               font-size: 14px;
+               border-radius: 4px;
+               box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+               font-size: 11px;
+               li {
+                  padding: 5px 15px;
+               }
+               .active {
+                  background: #c00;
+               }
+            }
+            .active-ql {
+               display: block;
             }
          }
       }
