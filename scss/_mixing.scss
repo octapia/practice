@@ -5,5 +5,8 @@
    transform: translate(-50%, -50%);
 }
 
-@mixin name {
+@mixin custom($size) {
+   @media (max-width: $size) {
+      @content;
+   }
 }

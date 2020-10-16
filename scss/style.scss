@@ -204,6 +204,7 @@ section.popup.popup-block {
    overflow-y: auto;
    box-sizing: border-box;
    font-family: $oswald;
+
    &-overly {
       background: #00000069;
       height: 100%;
@@ -222,6 +223,10 @@ section.popup.popup-block {
       background-repeat: no-repeat;
       box-sizing: border-box;
       overflow: hidden;
+      @include custom(740px) {
+         width: 90%;
+         margin: 0 auto;
+      }
       &:hover {
          .attention {
             left: -100%;

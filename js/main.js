@@ -63,5 +63,5 @@ playButton.addEventListener("click", () => {
       playButton.style.transition = "0s all";
       playButton.classList.remove("playButton-spinner");
       document.querySelector(".popup").classList.add("popup-block");
-   }, 5000);
+   }, 3000);
 });
