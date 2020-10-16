@@ -14,3 +14,40 @@ for (let i = 0; i < btns.length; i++) {
       this.className += " active";
    });
 }
+
+// full screen
+
+const screenButton = document.querySelector(".fa-expand-arrows-alt");
+
+if (
+   document.fullscreenEnabled ||
+   document.webkitFullscreenEnabled ||
+   document.mozFullScreenEnabled ||
+   document.msFullscreenEnabled
+) {
+   fullscreenAvailable = true;
+}
+
+screenButton.addEventListener(
+   "click",
+   function () {
+      if (fullscreenAvailable) {
+         launchFullscreen(document.getElementsByClassName("video"));
+      } else {
+         alert("Sorry, fullscreen not available...");
+      }
+   },
+   false
+);
+
+function launchFullscreen(element) {
+   if (element[0].requestFullscreen) {
+      element[0].requestFullscreen();
+   } else if (element[0].mozRequestFullScreen) {
+      element[0].mozRequestFullScreen();
+   } else if (element[0].webkitRequestFullscreen) {
+      element[0].webkitRequestFullscreen();
+   } else if (element[0].msRequestFullscreen) {
+      element[0].msRequestFullscreen();
+   }
+}

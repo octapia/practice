@@ -21,6 +21,20 @@ h1 {
    text-align: center;
    color: white;
    font-weight: normal;
+   margin-bottom: 2rem;
+}
+
+.video:fullscreen {
+   .video-banner {
+      height: 90vh;
+      margin-top: 5rem;
+      .video-footer {
+         display: none;
+      }
+   }
+   .container {
+      width: 100%;
+   }
 }
 
 .video {
