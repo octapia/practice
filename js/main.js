@@ -51,3 +51,10 @@ function launchFullscreen(element) {
       element[0].msRequestFullscreen();
    }
 }
+
+// play button
+const playButton = document.querySelector(".playButton");
+
+playButton.addEventListener("click", () => {
+   playButton.classList.add("playButton-spinner");
+});
