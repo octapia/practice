@@ -30,7 +30,13 @@ h1 {
       background-size: cover;
       position: relative;
       cursor: pointer;
-      &-overlay {
+      &-overly {
+         background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 1) 15%,
+            rgba(255, 255, 255, 0) 25%
+         );
+         height: 100%;
       }
       &:hover {
          .playButton {
@@ -73,11 +79,13 @@ h1 {
 
       &-right {
          display: flex;
+         align-items: center;
          .live {
             display: flex;
             align-items: center;
+            text-transform: uppercase;
             span {
-               margin-right: 10px;
+               margin-right: 5px;
                border-radius: 50%;
                height: 10px;
                width: 10px;
@@ -95,6 +103,15 @@ h1 {
                }
             }
          }
+         .setting {
+            position: relative;
+            img.hd {
+               position: absolute;
+               top: -5px;
+               width: 17px;
+               right: 0px;
+            }
+         }
       }
       &-left {
       }
@@ -103,6 +120,7 @@ h1 {
          color: #999;
          padding: 6px 12px;
          font-size: 14px;
+         margin: 0;
          &:hover {
             color: white;
          }
