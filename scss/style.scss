@@ -1,0 +1,110 @@
+@import "./url";
+@import "./variable";
+
+body {
+   font-family: $openSans;
+   margin: 0;
+   padding: 0;
+   background: black;
+   color: white;
+}
+
+.container {
+   width: 75%;
+   margin: 0 auto;
+}
+
+h1 {
+   font-family: $oswald;
+   text-align: center;
+   color: white;
+   font-weight: normal;
+}
+
+.video {
+   &-banner {
+      background: url(../images/banner.jpg);
+      height: 547px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      cursor: pointer;
+      &-overlay {
+      }
+      &:hover {
+         .playButton {
+            border-color: #c00;
+            i {
+               opacity: 1;
+               transform: scale(1, 1);
+            }
+         }
+      }
+      .playButton {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         border: 5px solid;
+         border-color: #c000;
+         border-radius: 50%;
+         transition: 0.3s all;
+         width: 75px;
+         height: 76px;
+         i {
+            font-size: 36px;
+            padding: 20px;
+            background: wheat;
+            border-radius: 50%;
+            opacity: 0.5;
+            transform: scale(1.4, 1.4);
+            background: rgba(0, 0, 0, 0.6);
+            transition: 0.3s all;
+         }
+      }
+   }
+   &-footer {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      &-right {
+         display: flex;
+         .live {
+            display: flex;
+            align-items: center;
+            span {
+               margin-right: 10px;
+               border-radius: 50%;
+               height: 10px;
+               width: 10px;
+               background: #c00;
+               display: block;
+               animation: blinker 1.5s cubic-bezier(0.5, 0, 1, 1) infinite
+                  alternate;
+            }
+            @keyframes blinker {
+               0% {
+                  opacity: 0;
+               }
+               100% {
+                  opacity: 100%;
+               }
+            }
+         }
+      }
+      &-left {
+      }
+      i,
+      p {
+         color: #999;
+         padding: 6px 12px;
+         font-size: 14px;
+         &:hover {
+            color: white;
+         }
+      }
+   }
+}
