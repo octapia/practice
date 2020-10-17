@@ -6,8 +6,8 @@ body {
    font-family: $openSans;
    margin: 0;
    padding: 0;
-   // background: black;
-   // color: white;
+   background: black;
+   color: white;
 }
 
 .container {
@@ -74,6 +74,7 @@ main {
       position: relative;
       cursor: pointer;
       overflow: hidden;
+
       &-overly {
          // background: linear-gradient(
          //    0deg,
@@ -390,6 +391,32 @@ section.popup.popup-block {
          &:hover {
             text-decoration: underline;
          }
+      }
+   }
+}
+
+// Dmca
+.dmca {
+   padding: 3rem 0;
+   box-sizing: border-box;
+   background: #ffffff;
+   color: #525355;
+   font-family: "Raleway", sans-serif;
+   a {
+      text-decoration: underline;
+   }
+   p {
+      line-height: 1.8;
+      margin-bottom: 5rem;
+   }
+   ul {
+      margin: 0;
+      padding: 0;
+      list-style: decimal;
+      list-style-position: outside;
+      li {
+         margin-top: 1rem;
+         padding-left: 0.5rem;
       }
    }
 }

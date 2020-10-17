@@ -92,7 +92,7 @@ function onload() {
    playButton.classList.remove("playButton-spinner");
    document.querySelector(
       ".video-banner"
-   ).style.backgroundImage = `url(../images/banner.jpg)`;
+   ).style.backgroundImage = `url(./images/banner.jpg)`;
    videoBanner.style.backgroundRepeat = "no-repeat";
    videoBanner.style.backgroundSize = "cover";
    videoFooter.style.display = "flex";
