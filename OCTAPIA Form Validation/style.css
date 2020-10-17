@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
+*{
+  box-sizing :border-box
+}
+
+body{
+  background: url(https://image.freepik.com/free-photo/3d-rendering-luxury-new-background-white-honeycomb-hexagon-pattern-honeycomb-3d-illustration_117358-247.jpg) no-repeat;
+  background-size: cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  margin:0;
+  font-family: 'Mina', sans-serif;
+  font-weight:  bold;
+  font-size: 18px;
+
+}
+.container{
+  background:rgba(255, 255, 255, 0.527);
+  border-radius:5px;
+  width:500px;
+  box-shadow: 0 21px 51px rgba(0, 0, 0, 0.767);
+  margin:10px
+}
+.form{
+  padding:30px 40px
+}
+.form-element{
+  margin-bottom:10px;
+  padding-bottom:20px;
+  position: relative;
+}
+
+.form-element label{
+  display: inline;
+  margin-bottom: 5px;
+  margin-left:5px
+}
+
+.form-element input,textarea {
+  border:2px solid #f2f2f2;
+  padding:10px;
+  font-size:14px;
+  width:100%;
+  border-radius:4px;
+  display: block;
+
+}
+.form-element i{
+  position :absolute;
+  top:40px;
+  right:10px;
+  visibility: hidden;
+}
+
+.form-element small{
+  position: absolute;
+  left:0;
+  visibility: hidden;
+}
+#submit{
+  background-color: rgba(0, 0, 0, 0.596);
+  border:2px solid #000;
+  color:#fff;
+  display:block;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+  padding:5px
+}
+.form-element.success input{
+  border-color: rgb(32, 218, 162);
+}
+.form-element.success i.fa-check-circle{
+  visibility: visible;
+  color: #2ecc71;
+}
+.form-element.error input{
+  border-color: red;
+}
+.form-element.error i.fa-exclamation-circle{
+  color: red;
+  visibility: visible;
+}
+.form-element.error small{
+  color:red;
+  visibility: visible;
+}

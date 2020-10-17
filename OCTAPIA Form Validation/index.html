@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Opt in for OCTAPIA ? </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+
+  <div class="container">
+    <form class="form" id="form">
+      <h2>
+        OCTAPIA তে ‍যুক্ত হতে চান  ?
+      </h2>
+      <!-- name setion -->
+      <div class="form-element">
+        <label for="name"> আপনার নাম : </label>
+        <input name="Name" type="text" id="name" placeholder="ex: OCTAPIA">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+      </div>
+
+      <!-- working section -->
+      <div class="form-element">
+        <label for="workingSector"> কাজের পরিধি নির্বাচন করুন :  </label>
+        <input id="workingSector" list="options" name="workingSector" >
+        <datalist id="options">
+          <option value="Back-End"></option>
+          <option value="Front-End"></option>
+          <option value="Web-Design"></option>
+          <option value="Graphics-Design"></option>
+          <option value="Digital-Marketing"></option>
+          <option value="SEO"></option>
+          <option value="Content-Writing"></option>
+        </datalist>
+      </div>
+
+       <!--Experience section -->
+       <div class="form-element">
+        <label for="experience"> অভিজ্ঞতা :  </label>
+        <input id="experience" list="experiences" name="experience" >
+        <datalist id="experiences">
+          <option value="Intermediate"></option>
+          <option value="Advanced"></option>
+          <option value="Professional"></option>
+        </datalist>
+      </div>
+
+      <!-- about me setion -->
+      <div class="form-element">
+        <label for="about"> সংক্ষেপে নিজেকে বর্ণনা করুন : </label>
+        <textarea name="About me" id="aboutMe" cols="60" rows="5"></textarea>
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+      </div>
+      
+       <!-- Email setion -->
+       <div class="form-element">
+        <label for="email"> Email : </label>
+        <input name="Email" type="email" id="email" placeholder="ex: username@email.com">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+      </div>
+
+      
+
+        <!--Contact  setion -->
+        <div class="form-element">
+          <label for="mobile"> মোবাইল নং : (+880) </label>
+          <input name="Number" type="tel" id="mobile" placeholder="ex: 1*********">
+          <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+        </div>
+
+        
+
+        <!-- GitHub setion -->
+        <div class="form-element">
+          <label for="github">
+            GitHub ইউজার অ্যড্রেস :  </label>
+          <input name="Github user Address" type="email" id="github" placeholder="ex: https://github.com/username">
+          <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+        </div>
+
+          <!--Skype  setion -->
+       <div class="form-element ">
+        <label for="skype">
+          Skype ইউজার অ্যড্রেস :  </label>
+        <input name="Skype user address" type="email" id="skype" placeholder="ex: live:sd4njb34b343">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+      </div>
+
+        <!-- Trello setion -->
+        <div class="form-element ">
+          <label for="trello">
+           Trello ইউজার অ্যড্রেস :  </label>
+          <input name="Trello user address" type="email" id="trello" placeholder="ex: username@trello.com">
+          <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small></small>
+        </div>
+      <button id="submit" type="submit">Submit</button>
+
+    </form>
+  </div>
+
+
+  <!-- JavaScript linkage code -->
+        <script src="main.js"></script>
+</body>
+</html>
