@@ -1,2 +1,3 @@
 # Dependency directories
 /mailer/node_modules
+/node-crud-without-db/node_modules
