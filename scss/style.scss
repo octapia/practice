@@ -6,8 +6,8 @@ body {
    font-family: $openSans;
    margin: 0;
    padding: 0;
-   background: black;
-   color: white;
+   // background: black;
+   // color: white;
 }
 
 .container {
@@ -20,7 +20,7 @@ ul {
 h1 {
    font-family: $oswald;
    text-align: center;
-   color: white;
+   // color: white;
    font-weight: normal;
    margin-bottom: 2rem;
 }
@@ -328,6 +328,39 @@ section.popup.popup-block {
       left: 0;
       strong {
          color: #fff;
+      }
+   }
+}
+
+// footer
+.footer {
+   margin-top: 3rem;
+   background: black;
+   color: white;
+   text-align: center;
+   padding: 2rem 0;
+   .playlist {
+      margin: 0 auto;
+      display: block;
+      @include custom(500px) {
+         img {
+            width: 90%;
+         }
+      }
+   }
+   a {
+      margin-bottom: 20px;
+   }
+   p {
+      width: 90%;
+      margin: 0 auto;
+      font-size: 13px;
+      margin-top: 2rem;
+      a {
+         color: #ccc;
+         &:hover {
+            text-decoration: underline;
+         }
       }
    }
 }
