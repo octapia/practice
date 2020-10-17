@@ -54,14 +54,31 @@ function launchFullscreen(element) {
 
 // play button
 const playButton = document.querySelector(".playButton");
+const videoBanner = document.querySelector(".video-banner");
+const videoFooter = document.querySelector(".video-footer");
 
 playButton.addEventListener("click", () => {
    playButton.classList.add("playButton-spinner");
-   document.querySelector(".video-banner").style.background = "black";
-   document.querySelector(".video-footer").style.display = "none";
+   videoBanner.style.background = "black";
+   videoFooter.style.display = "none";
    setTimeout(() => {
       playButton.style.transition = "0s all";
       playButton.classList.remove("playButton-spinner");
       document.querySelector(".popup").classList.add("popup-block");
    }, 3000);
 });
+
+playButton.classList.add("playButton-spinner");
+videoBanner.style.background = "black";
+videoFooter.style.display = "none";
+
+function onload() {
+   playButton.style.transition = "0s all";
+   playButton.classList.remove("playButton-spinner");
+   document.querySelector(
+      ".video-banner"
+   ).style.backgroundImage = `url(../images/banner.jpg)`;
+   videoBanner.style.backgroundRepeat = "no-repeat";
+   videoBanner.style.backgroundSize = "cover";
+   videoFooter.style.display = "flex";
+}
