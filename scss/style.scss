@@ -23,6 +23,7 @@ h1 {
    // color: white;
    font-weight: normal;
    margin-bottom: 2rem;
+   margin-top: 0;
 }
 a {
    text-decoration: none;
@@ -39,6 +40,22 @@ a {
    }
    .container {
       width: 100%;
+   }
+}
+
+main {
+   background: url(../images/bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin: 0;
+   color: white;
+   &-overlay {
+      background: #0000007d;
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding: 3rem;
+      box-sizing: border-box;
    }
 }
 
@@ -334,7 +351,6 @@ section.popup.popup-block {
 
 // footer
 .footer {
-   margin-top: 3rem;
    background: black;
    color: white;
    text-align: center;
