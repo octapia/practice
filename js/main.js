@@ -15,8 +15,38 @@ for (let i = 0; i < btns.length; i++) {
    });
 }
 
-// full screen
+// play button
+const playButton = document.querySelector(".playButton");
+const videoBanner = document.querySelector(".video-banner");
+const videoFooter = document.querySelector(".video-footer");
 
+const addClick = (fullscreen) => {
+   playButton.classList.add("playButton-spinner");
+   videoBanner.style.background = "black";
+   videoFooter.style.display = "none";
+   switch (fullscreen) {
+      case fullscreen:
+         setTimeout(() => {
+            document.querySelector(".popup").classList.add("popup-block");
+         }, 3000);
+         break;
+      case !fullscreen:
+         setTimeout(() => {
+            playButton.style.transition = "0s all";
+            playButton.classList.remove("playButton-spinner");
+            document.querySelector(".popup").classList.add("popup-block");
+         }, 3000);
+         break;
+      default:
+         break;
+   }
+};
+
+playButton.classList.add("playButton-spinner");
+videoBanner.style.background = "black";
+videoFooter.style.display = "none";
+
+// full screen
 const screenButton = document.querySelector(".fa-expand-arrows-alt");
 
 if (
@@ -33,6 +63,7 @@ screenButton.addEventListener(
    function () {
       if (fullscreenAvailable) {
          launchFullscreen(document.getElementsByClassName("video"));
+         playButton.addEventListener("click", () => addClick(true));
       } else {
          alert("Sorry, fullscreen not available...");
       }
@@ -52,25 +83,9 @@ function launchFullscreen(element) {
    }
 }
 
-// play button
-const playButton = document.querySelector(".playButton");
-const videoBanner = document.querySelector(".video-banner");
-const videoFooter = document.querySelector(".video-footer");
+playButton.addEventListener("click", () => addClick());
 
-playButton.addEventListener("click", () => {
-   playButton.classList.add("playButton-spinner");
-   videoBanner.style.background = "black";
-   videoFooter.style.display = "none";
-   setTimeout(() => {
-      playButton.style.transition = "0s all";
-      playButton.classList.remove("playButton-spinner");
-      document.querySelector(".popup").classList.add("popup-block");
-   }, 3000);
-});
-
-playButton.classList.add("playButton-spinner");
-videoBanner.style.background = "black";
-videoFooter.style.display = "none";
+// onload
 
 function onload() {
    playButton.style.transition = "0s all";
