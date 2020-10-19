@@ -3,9 +3,74 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Contact us</title>
+      <link rel="stylesheet" href="./css/dmca.css" />
+      <link rel="shortcut icon" href="./images/hd.png" type="image/x-icon" />
+      <title>Document</title>
    </head>
    <body>
-      <h1>Contact us</h1>
+         <!-- header -->
+         <header>
+            <div class="container">
+               <nav class="flex">
+                  <a href="#" class="logo">
+                     <h2>Ten sports live</h2>
+                  </a>
+                  <div class="responsive-container">
+                     <div class="responsive">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                     </div>
+                     <ul class="flex">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/dmca.html">Dmca</a></li>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/contact-us.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </header>
+      <section class="contact">
+         <div class="container">
+            <h1>Contact with us</h1>
+            <form method="post" autocomplete="off" name="google-sheet">
+               <div class="form-group">
+                  <div class="form-item">
+                     <label for="name">Name </label>
+                     <input type="text" placeholder="Enter your name" name="Name" />
+                  </div>
+                  <div class="form-item">
+                     <label for="name">Email </label>
+                     <input type="text" placeholder="Enter your email" name="Email" />
+                  </div>
+                  <div class="form-item">
+                     <textarea
+                        id="name"
+                        placeholder="Enter your message"name="Message"
+                     ></textarea>
+                  </div>
+                  <div class="form-item">
+                     <input type="submit" value="Send your message" />
+                  </div>
+            </form>
+         </div>
+      </section>
+
+      <script>
+         const scriptURL =
+            "https://script.google.com/macros/s/AKfycbzXfh_k-hcErZBjCO3lwWOEzvk3qI-KgAS-DPQdji8XLm6Tj7w/exec";
+         const form = document.forms["google-sheet"];
+
+         form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            fetch(scriptURL, { method: "POST", body: new FormData(form) })
+               .then((response) => {
+                  console.log(response);
+               })
+               .catch((error) => console.error("Error!", error.message));
+         });
+      </script>
+      <script src="./js/responsive.js"></script>
    </body>
 </html>
