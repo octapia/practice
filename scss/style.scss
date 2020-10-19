@@ -62,7 +62,6 @@ main {
       height: 100%;
       width: 100%;
       display: block;
-      padding: 3rem;
       box-sizing: border-box;
    }
 }
@@ -105,6 +104,8 @@ main {
          transition: 0.3s all;
          width: 75px;
          height: 76px;
+         transform: rotate(0deg);
+         margin: -4vmax;
          i {
             font-size: 36px;
             padding: 20px;
@@ -117,8 +118,6 @@ main {
          }
       }
       .playButton-spinner {
-         top: 42.1%;
-         left: 46.4%;
          border-color: $c00;
          border-right-color: transparent !important;
          animation: three-quarters-loader 1s infinite linear;
