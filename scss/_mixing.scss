@@ -10,3 +10,20 @@
       @content;
    }
 }
+
+@mixin tab() {
+   @media (max-width: 769px) {
+      @content;
+   }
+}
+@mixin phn() {
+   @media (max-width: 426px) {
+      @content;
+   }
+}
+
+@mixin custom($screen) {
+   @media (max-width: $screen) {
+      @content;
+   }
+}
