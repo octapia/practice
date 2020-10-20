@@ -9,12 +9,12 @@ export function FooterContainer() {
         <Footer.Row>
           <Footer.Column>
             <Footer.Title>About Us</Footer.Title>
-            <Footer.Link href="#">Story</Footer.Link>
-            <Footer.Link href="#">Clients</Footer.Link>
-            <Footer.Link href="#">Testimonials</Footer.Link>
+            <Footer.Link href="#">Our Story</Footer.Link>
+            <Footer.Link href="#">Our Clients</Footer.Link>
+            <Footer.Link href="#">All Testimonials</Footer.Link>
           </Footer.Column>
           <Footer.Column>
-            <Footer.Title>Services</Footer.Title>
+            <Footer.Title>Our Services</Footer.Title>
             <Footer.Link href="#">Marketing</Footer.Link>
             <Footer.Link href="#">Consulting</Footer.Link>
             <Footer.Link href="#">Development</Footer.Link>
