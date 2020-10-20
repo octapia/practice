@@ -8,3 +8,10 @@ body{
     align-items: center;
     height :100vh;
 }
+#calculator{
+    height: 560px;
+    width:300px;
+    background: gray;
+    border-radius: 10px;
+    
+}
