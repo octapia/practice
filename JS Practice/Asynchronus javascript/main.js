@@ -1,21 +1,4 @@
 
-// //Simple AJAX request 
-
-// let xhr = new XMLHttpRequest();
-
-// xhr.open('get','https://jsonplaceholder.typicode.com/posts');
-
-// xhr.onreadystatechange = function(e){
-//     if(xhr.readyState === 4 && xhr.status === 200){
-//         let users = JSON.parse(xhr.response);
-//         console.log(users)
-//     }else{
-//         console.log(xhr.readyState ,xhr.status)
-//     }
-// }
-
-// xhr.send()
-
 // MAKING of a web API using callback in AJAX
 
 function getResponse(url,callback){
@@ -32,11 +15,32 @@ function getResponse(url,callback){
     xhr.send();
 }
 
-// Now we can call for the response for any url ...
-getResponse('https://jsonplaceholder.typicode.com/users',(err,res)=>{
+// callback is not always wise for async js 
+// let's realise why ?
+
+// we below we will call some different data from server
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
+
+getResponse(`${BASE_URL}/posts/1`,(err,res)=>{
     if(err){
-        console.log(err)
+        throw new Error('Something is wrong')
     }else{
-        res.forEach(r=>console.log(r.name));
+        console.log(res.title)
     }
 })
+getResponse(`${BASE_URL}/users/1`,(err,res)=>{
+    if(err){
+        throw new Error('Something is wrong')
+    }else{
+        console.log(res.name)
+    }
+})
+getResponse(`${BASE_URL}/posts/1`,(err,res)=>{
+    if(err){
+        throw new Error('Something is wrong')
+    }else{
+        console.log(res.title)
+    }
+})
+
+//  it could be too tough to maintain a lots of callback for asynch js
