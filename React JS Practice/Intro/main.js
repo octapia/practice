@@ -1,7 +1,11 @@
 class App extends React.Component{
     render(){
-        return React.createElement('div',null,'Hello WOrld !')
+        return (
+            <div>
+            <h1> Hello World </h1>
+            </div>
+        )
     }
 }
 
-ReactDOM.render(React.createElement(App,null),document.getElementById('root'))
+ReactDOM.render(<App/>,document.getElementById('root'))
