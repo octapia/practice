@@ -9,16 +9,22 @@ class App extends Component {
         };
     }
 
-handleButton =  () =>  {
-        this.setState({name:'shahid',roll:22});
-    };
+handleButton =  (id,e) => console.log(id,e);
+
 
     render() { 
         return (
             <>
             <h1>Name : {this.state.name}</h1>
             <h1>Roll : {this.state.roll}</h1>
-            <button onClick={this.handleButton}>Click Me</button>
+            
+            {/* passing Arguments to event Handlers */}
+
+            {/* Using function */}
+            {/* <button onClick={e => this.handleButton(this.state.name,e)}>Click Me</button> */}
+
+            {/* Using bind() Method  */}
+            <button onClick={this.handleButton.bind(this,this.state.name)}>Click Me</button>
             </>
           );
     }
