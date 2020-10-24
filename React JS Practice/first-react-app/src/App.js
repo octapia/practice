@@ -1,23 +1,18 @@
+import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 
-class App extends Component {
-    // // this problem solution using constructor bind method
-    // constructor(props){
-    //     super(props);
-    //     this.handleClick = this.handleClick.bind(this);
+function App(props){
+    // function handleButton(){
+    //     console.log('BUtton clicked');
     // }
-
-    // more easy way using es6 feature arrow function
-   handleClick = () => {
-        console.log('Button Clicked',this);
+    const handleButton = (e)=>{
+        e.preventDefault();
+        console.log('Button Clicked');
     }
-    render() { 
-        return ( 
-            <>
-                <button onClick={this.handleClick}>Click Me</button>          
-            </>
-         );
-    }
+        return (
+        <>
+        <a href="http://www.facebook.com" onClick={handleButton}>Click Me</a>
+        </>);
 }
  
 export default App;
