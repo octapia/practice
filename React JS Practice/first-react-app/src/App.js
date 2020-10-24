@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-    state = {
-        name :'Tahid',
-        roll : this.props.roll 
-      }
+    constructor(props){
+        super(props);
+        this.state = {
+            name :'Tahid',
+            roll : this.props.roll 
+          }
+    }
     render() { 
         return ( 
             <>
