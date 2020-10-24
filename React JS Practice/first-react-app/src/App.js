@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            name :'Tahid',
-            roll : this.props.roll 
-          }
+    // // this problem solution using constructor bind method
+    // constructor(props){
+    //     super(props);
+    //     this.handleClick = this.handleClick.bind(this);
+    // }
+
+    // more easy way using es6 feature arrow function
+   handleClick = () => {
+        console.log('Button Clicked',this);
     }
     render() { 
         return ( 
             <>
-            <h1>Name : {this.state.name}</h1>
-            <h1>Roll : {this.state.roll}</h1>
+                <button onClick={this.handleClick}>Click Me</button>          
             </>
          );
     }
