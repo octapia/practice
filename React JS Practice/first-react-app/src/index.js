@@ -4,4 +4,4 @@ import App from './App';
 
 
 
-ReactDOM.render(<App roll={11} />,document.getElementById('root'))
+ReactDOM.render(<App > I am Children </App>,document.getElementById('root'))
