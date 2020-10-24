@@ -1,18 +1,28 @@
-import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 
-function App(props){
-    // function handleButton(){
-    //     console.log('BUtton clicked');
-    // }
-    const handleButton = (e)=>{
-        e.preventDefault();
-        console.log('Button Clicked');
+class App extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            name:'Tahid',
+            roll: this.props.roll
+        };
     }
+
+handleButton =  () =>  {
+        this.setState({name:'shahid',roll:22});
+    };
+
+    render() { 
         return (
-        <>
-        <a href="http://www.facebook.com" onClick={handleButton}>Click Me</a>
-        </>);
+            <>
+            <h1>Name : {this.state.name}</h1>
+            <h1>Roll : {this.state.roll}</h1>
+            <button onClick={this.handleButton}>Click Me</button>
+            </>
+          );
+    }
 }
  
 export default App;
+ 
