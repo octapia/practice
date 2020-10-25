@@ -1,3 +1,7 @@
 # Dependency directories
+/ejs-engine/node_modules
 /mailer/node_modules
 /node-crud-without-db/node_modules
+/mongo/node_modules
+/api/node_modules
+/api/.env

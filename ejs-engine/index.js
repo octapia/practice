@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT | 1234;
 
 app.set("view engine", "ejs");
+app.use(morgan('dev'));
 
 app.get("/", (req, res) => {
     res.render("home", { title: "Home" });
