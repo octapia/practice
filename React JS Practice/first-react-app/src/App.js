@@ -1,23 +1,18 @@
-import React, { useState,useEffect } from 'react';
+import React from 'react';
+import CustomHook from './Student';
 
 function App(){
-    const [count, setCount] = useState(0);
-    const [count2, setCount2] = useState(20);
-    
-    const changeCount = () => setCount(count + 1);
-    const changeCount2 = () => setCount2(count2 - 1);
-    useEffect( ()=>{
-        console.log('Effect Done !')
-    },[count2,count])
+const data1 = CustomHook();
+const data2 = CustomHook();
 
-    return (
-        <>
-        <h1>Count : {count}</h1>
-        <button onClick={changeCount}>ChangeCount</button>
-        <h1>Count2 : {count2}</h1>
-        <button onClick={changeCount2}>ChangeCount2</button>
-        </>
-    )
+return (
+    <>
+    <h1> count1 : {data1.count}</h1>
+    <button onClick={data1.incrementButton}>Change</button>
 
+    <h1> count2 : {data2.count}</h1>
+    <button onClick={data2.incrementButton}>Change</button>
+    </>
+)
 }
 export default App;
