@@ -13,7 +13,7 @@ export default class App extends Component {
     render() {
         return (
             <ul >
-               {this.state.users.map( a => <li>{a.id + " "+ a.name}</li>)} 
+               {this.state.users.map( a => <li key={a.id}>{a.id + " "+ a.name}</li>)} 
             </ul>
         )
     }
