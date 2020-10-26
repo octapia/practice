@@ -1,5 +1,5 @@
 const express = require(`express`);
-const postRoute = require(`./routes/postRoute`);
+const PostController = require(`./controllers/PostController`);
 const mongoose = require(`mongoose`);
 require(`dotenv/config`)
 const app = express();
@@ -10,7 +10,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
 });
 app.use(express.json());
 
-app.use(`/posts`, postRoute);
+app.use(`/posts`, PostController);
 app.get(`/`, (req, res) => {
     res.send(`please visit correct API path`);
 });
