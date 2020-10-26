@@ -4,7 +4,7 @@ class User extends Component {
         return (
             <>
             <h1>Welcome User</h1>
-            <button> Log In</button>
+            <button onClick={this.props.clickData}> Log Out</button>
             </>
          );
     }

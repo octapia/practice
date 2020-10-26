@@ -5,7 +5,7 @@ class Guest extends Component {
         return ( 
             <>
             <h1>Welcome Guest</h1>
-            <button> Sign up</button>
+            <button onClick={this.props.clickData}> Log in</button>
             </>
          );
     }
