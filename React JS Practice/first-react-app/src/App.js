@@ -2,19 +2,22 @@ import React, { Component } from 'react'
 
 export default class App extends Component {
     state = {
-        users : [
-            {id:101, name:'Tahid', roll : 220},
-            {id:103, name:'Sahid', roll : 122},
-            {id:105, name:'jahid', roll : 212},
-        ],
-        isLoggedIn : false
+        change :false
     }
+    btnChange = () => this.setState({change:true})
 
     render() {
+        const btn = {
+            color: 'white',
+            backgroundColor: 'green',
+            fontSize:'42px'
+        }
+        if(this.state.change) btn.backgroundColor = 'red';
+        
         return (
-            <ul >
-               {this.state.users.map( a => <li key={a.id}>{a.id + " "+ a.name}</li>)} 
-            </ul>
+            <button onClick={this.btnChange} style={btn}>
+                Button
+            </button>
         )
     }
 }
