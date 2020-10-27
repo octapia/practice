@@ -1,24 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import User from './User';
+
+export const MyContext = React.createContext()
 
 export default class App extends Component {
-    constructor(props){
-        super(props);
-        this.backRef = null;
-        this.setRef = (e) => this.backRef = e;
+    state = {
+        name: 'Tahid',
+        value : 11
     }
-   componentDidMount = e =>  this.backRef.focus()
-
-   
     render() {
         return (
-            <div>
-                <form className="p-2" >
-              
-                Input : <input type="text" ref={this.setRef} /><br/> <br/>
-               Pass <input type="text"  />
-                </form>
-    
-                </div>
+            <MyContext.Provider value={this.state}>
+                <User />
+            </MyContext.Provider>
+
         )
     }
 }
