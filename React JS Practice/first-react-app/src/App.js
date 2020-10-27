@@ -3,30 +3,21 @@ import React, { Component } from 'react'
 export default class App extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            value : ''
-        };
-        this.textInput = React.createRef();
+        this.backRef = null;
+        this.setRef = (e) => this.backRef = e;
     }
-    // componentDidMount = () => {
-    //    this.textInput.current.focus()
-    // }
-    
-    getInput = e =>{
-        e.preventDefault();
+   componentDidMount = e =>  this.backRef.focus()
 
-        this.setState({value:this.textInput.current.value})
-    }
-
+   
     render() {
         return (
             <div>
-                <form className="p-2" onSubmit={this.getInput}>
+                <form className="p-2" >
               
-                Input : <input type="text" ref={this.textInput} /><br/> <br/>
-                <input type="submit" value="Submit" />
+                Input : <input type="text" ref={this.setRef} /><br/> <br/>
+               Pass <input type="text"  />
                 </form>
-                  You Typed : {this.state.value} <br/>
+    
                 </div>
         )
     }
