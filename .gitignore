@@ -5,3 +5,5 @@
 /mongo/node_modules
 /api/node_modules
 /api/.env
+/blog/node_modules
+/blog/.env
