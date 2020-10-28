@@ -1,19 +1,10 @@
-import React, { Component } from 'react';
-import User from './User';
-
-export const MyContext = React.createContext()
-
+import React, { Component } from 'react'
+import Navbar from './Navbar/Navbar';
+import './App.css';
 export default class App extends Component {
-    state = {
-        name: 'Tahid',
-        value : 11
-    }
     render() {
         return (
-            <MyContext.Provider value={this.state}>
-                <User />
-            </MyContext.Provider>
-
+            <Navbar />
         )
     }
 }
