@@ -1,17 +1,26 @@
 const route = require(`express`).Router();
-const LoginValidator = require(`./validators/LoginValidator`);
-const RegisterValidator = require(`./validators/RegisterValidator`);
 
+/* Validators */
+
+const loginValidator = require(`./validators/loginValidator`);
+
+const registerValidator = require(`./validators/registerValidator`);
+
+/* Controllers */
 
 const { register, registerProcess } = require(`./controllers/RegisterController`);
+
 const { login, loginProcess } = require(`./controllers/LoginController`);
 
+/* Route end points */
+
 route.get(`/register`, register);
-route.post(`/register`, RegisterValidator, registerProcess);
+
+route.post(`/register`, registerValidator, registerProcess);
+
 route.get(`/login`, login);
-route.post(`/login`, LoginValidator, loginProcess);
 
-
+route.post(`/login`, loginValidator, loginProcess);
 
 
 
