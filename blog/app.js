@@ -1,28 +1,52 @@
 const express = require(`express`);
+const mongoose = require(`mongoose`);
+const path = require(`path`);
 const morgan = require(`morgan`);
 const routes = require(`./routes`);
+const livereload = require(`livereload`);
+const connectLivereload = require(`connect-livereload`);
+require(`dotenv/config`);
 const app = express();
 const port = process.env.PORT || 1234;
 
+// Live reload
+
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch(path.join(__dirname, 'public'));
+
 // set view engine
-app.set('views', 'views');
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine({ beautify: true }));
+app.set(`views`, `views`);
+app.set(`view engine`, `ejs`);
 
 // middlewares
 app.use([
     morgan(`dev`),
-    routes, express.json(),
+    express.json(),
     express.static(`public`),
-    express.urlencoded({ extended: true })
+    express.urlencoded({ extended: false }),
+    connectLivereload(),
+    routes
 ]);
 
 
 app.get(`/`, (req, res) => {
-    res.render(`layout/master`, { title: `Home` });
+    res.render(`backend/pages/dashboard`, { title: `Home` });
+});
+app.get(`*`, (req, res) => {
+    res.send(`not found`);
 });
 
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-})
+
+liveReloadServer.server.once(`connection`, () => {
+    setTimeout(() => {
+        liveReloadServer.refresh(`/`);
+    }, 100);
+});
+
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+    console.log(`Connected to BD`);
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    })
+});

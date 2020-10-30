@@ -1,4 +1,5 @@
 # Dependency directories
+/node_modules
 /ejs-engine/node_modules
 /mailer/node_modules
 /node-crud-without-db/node_modules

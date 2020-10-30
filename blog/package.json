@@ -4,21 +4,23 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node ./bin/www",
+    "watch": "nodemon --ext js,ejs --ignore public "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "express-react-views": "^0.11.0",
-    "mongoose": "^5.10.11",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "express-validator": "^6.6.1",
+    "mongoose": "^5.10.11"
   },
   "devDependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6"
   }
