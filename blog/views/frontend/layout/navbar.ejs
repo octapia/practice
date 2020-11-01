@@ -1,0 +1,45 @@
+<header class="header-area sticky-bar header-padding header-black header-height-1 mobile-menu-black header-hm6 clearfix">
+    <div class="container-fluid">
+        <div class="header-wrap header-flex">
+            <div class="logo mt-30">
+                <a href="/">
+                    <img class="logo-normally-none" alt="" src="images/logo.png" width="200">
+                    <img class="logo-sticky-none" alt="" src="images/logo.png" width="94">
+                </a>
+            </div>
+            <div class="main-menu">
+                <nav>                    
+                    <ul>                        
+                        <%- include("./nav-links") %>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right-wrap mt-50">
+                <div class="header-search mr-20">
+                    <button title="Register | Login ">
+                         <a href="/login"><span class="ti-user"></span></a>
+                    </button>
+                </div>
+                <div class="header-search mr-20">
+                    <button class="sidebar-trigger-search">
+                        <span class="ti-search"></span>
+                    </button>
+                </div>
+                <div class="bar-icon">
+                    <button class="header-navbar-active">
+                        <span class="ti-menu"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-area">
+            <div class="mobile-menu">
+                <nav id="mobile-menu-active">
+                    <ul class="menu-overflow">
+                        <%- include("./nav-links") %>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

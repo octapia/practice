@@ -1,0 +1,19 @@
+.slider-height-hm10 {
+    padding-top: 15px;
+}
+
+.slider-text-6 h1 {
+    font-size: 70px;
+}
+
+.footer-widget .useful-links li a {
+    color: #fff;
+}
+
+/*Responsive css*/
+@media only screen and (min-width: 992px) {
+    .nav-style-hm10 .owl-nav {
+        bottom: 90px;
+        left: 19%;
+    }
+}

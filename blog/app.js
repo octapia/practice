@@ -29,14 +29,6 @@ app.use([
 ]);
 
 
-app.get(`/`, (req, res) => {
-    res.render(`backend/pages/dashboard`, { title: `Home` });
-});
-app.get(`*`, (req, res) => {
-    res.send(`not found`);
-});
-
-
 
 liveReloadServer.server.once(`connection`, () => {
     setTimeout(() => {
