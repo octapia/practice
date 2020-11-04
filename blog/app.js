@@ -2,12 +2,21 @@ const express = require(`express`);
 const mongoose = require(`mongoose`);
 const path = require(`path`);
 const morgan = require(`morgan`);
-const routes = require(`./routes`);
 const livereload = require(`livereload`);
 const connectLivereload = require(`connect-livereload`);
+const session = require(`express-session`);
+const mongoDbSessionStore = require('connect-mongodb-session')(session);
 require(`dotenv/config`);
 const app = express();
+const routes = require(`./routes`);
 const port = process.env.PORT || 1234;
+
+/* MengoDB Session store*/
+var store = new mongoDbSessionStore({
+    uri: process.env.DB_CONNECTION,
+    collection: 'sessions',
+    expires: 1000 * 60 * 60 * 7,
+});
 
 // Live reload
 
@@ -25,6 +34,7 @@ app.use([
     express.static(`public`),
     express.urlencoded({ extended: false }),
     connectLivereload(),
+    session({ secret: `octapia secret token`, store, resave: false, saveUninitialized: false }),
     routes
 ]);
 
@@ -42,3 +52,9 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedT
         console.log(`Server running on port ${port}`);
     })
 });
+
+/* test code must delete */
+const { Schema, model } = mongoose;
+
+const testSchema = new Schema();
+console.log(testSchema);

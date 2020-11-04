@@ -8,9 +8,9 @@ const { validationResult } = validator;
 
 /*  Initial values */
 
-const pagePath = `frontend/auth/login`;
+const viewFile = `frontend/auth/login`;
 
-const pageTitle = `Register`;
+const metaTitle = `Register`;
 
 const invalidMsg = `Invalid email or password`;
 
@@ -18,7 +18,7 @@ const invalidMsg = `Invalid email or password`;
 
 const login = (req, res, next) => {
 
-    res.render(pagePath, { title: `Login`, errors: {}, values: {}, success: false });
+    res.render(viewFile, { title: `Login`, errors: {}, values: {} });
 
 }
 /* Login process */
@@ -31,9 +31,7 @@ const loginProcess = async (req, res, next) => {
 
     if (Object.keys(validationErrors).length) {
 
-        res.render(pagePath, { title: `Login`, errors: validationErrors, values: req.body, success: false });
-
-        return false;
+        return res.render(viewFile, { title: `Login`, errors: validationErrors, values: req.body });
     }
 
 
@@ -45,7 +43,8 @@ const loginProcess = async (req, res, next) => {
 
         if (!isExistingUser) {
 
-            res.render(pagePath, { title: `Login`, errors: { invalid: invalidMsg }, values: req.body, success: false });
+            return res.render(viewFile, { title: `Login`, errors: { invalid: invalidMsg }, values: req.body });
+
 
         }
 
@@ -53,16 +52,22 @@ const loginProcess = async (req, res, next) => {
 
         if (!isPasswordMatched) {
 
-            res.render(pagePath, { title: `Login`, errors: { invalid: invalidMsg }, values: req.body, success: false });
+            return res.render(viewFile, { title: `Login`, errors: { invalid: invalidMsg }, values: req.body });
 
         }
 
+        req.session.isLoggedIn = true;
+
+        req.session.user = isExistingUser;
+
+
+
     } catch (error) {
 
-        res.render(pagePath, { title: `Login`, errors: { invalid: invalidMsg }, values: req.body, success: false });
+        res.render(viewFile, { title: `Login`, errors: { invalid: invalidMsg }, values: req.body });
     }
 
-    res.render(pagePath, { title: `Login`, errors: {}, values: {}, success: `Logged in successfully` });
+    return res.redirect(`/admin`);
 }
 
 
