@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Welcome from "./Welcome";
+import PostList from "./PostList";
 
-const App = ()=> <Welcome name="dfsd" />
+const App = ()=> <PostList />
 
 export default App;
