@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import PostList from "./PostList";
+import PostForm from "./PostForm";
 
-const App = ()=> <PostList />
+const App = ()=> <PostForm />
 
 export default App;
