@@ -19,7 +19,8 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
     "mongoose": "^5.10.11",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "s-ago": "^2.2.0"
   },
   "devDependencies": {
     "connect-livereload": "^0.6.1",

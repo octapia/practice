@@ -1,3 +1,6 @@
+const { dateFormat
+ } = require(`../utils/helpers`);
+
 const redirectToLoginPage = (req, res, next) => {
     if (req.session.isLoggedIn) {
         return next();
@@ -12,9 +15,12 @@ const redirectToAdminPage = (req, res, next) => {
 }
 
 const passUserinfoToViews = (req, res, next) => {
-
-    res.locals.isLoggedIn = req.session.isLoggedIn;
-    res.locals.userInfo = req.session.user;
+    const { isLoggedIn, user } = req.session;
+    res.locals = {
+        isLoggedIn,
+        userInfo: user,
+        dateFormat
+    }
     return next();
 }
 module.exports = { redirectToLoginPage, redirectToAdminPage, passUserinfoToViews }

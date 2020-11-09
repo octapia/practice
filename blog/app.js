@@ -18,16 +18,16 @@ var store = new mongoDbSessionStore({
     expires: 1000 * 60 * 60 * 7,
 });
 
-// Live reload
+/* live reload server creation */
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.watch(path.join(__dirname, 'public'));
 
-// set view engine
+/* set view engine */
 app.set(`views`, `views`);
 app.set(`view engine`, `ejs`);
 
-// middlewares
+/* middlewares */
 app.use([
     morgan(`dev`),
     express.json(),
@@ -39,6 +39,7 @@ app.use([
 ]);
 
 
+/* live reload */
 
 liveReloadServer.server.once(`connection`, () => {
     setTimeout(() => {
@@ -46,15 +47,10 @@ liveReloadServer.server.once(`connection`, () => {
     }, 100);
 });
 
+/* database connection */
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log(`Connected to BD`);
     app.listen(port, () => {
         console.log(`Server running on port ${port}`);
     })
 });
-
-/* test code must delete */
-const { Schema, model } = mongoose;
-
-const testSchema = new Schema();
-console.log(testSchema);

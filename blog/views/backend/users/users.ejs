@@ -1,0 +1,113 @@
+<%- include("../layout/header") %>
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                        <li class="breadcrumb-item active">users</li>
+                        <li class="pull-right-addon">
+                            <a href="/admin/users/create" class="btn btn-primary btn-sm">
+                                <i class="fa fa-plus"></i> New
+                            </a>
+                            <a href="/admin/users" class="btn btn-success btn-sm">
+                                <i class="fa fa-th-list"></i> List
+                            </a>
+                        </li>
+                    </ol>
+                </nav>
+                <p class="card-title mb-0">Users</p>
+                <div class="table-responsive">
+                    <table id="order-listing" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Sl.</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Created At</th>
+                                <th>Updated At</th>
+                                <th>Verified</th>
+                                <th class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(users.length) { let i = 0; %>
+                            <% users.forEach(user => { ++i; %>
+                            <tr>
+                                <td>
+                                    <%= i %>
+                                </td>
+                                <td>
+                                    <%=user.name%>
+                                </td>
+                                <td>
+                                    <%=user.email%>
+                                </td>
+                                <td>
+                                    <%=dateFormat(user.createdAt)%>
+                                </td>
+                                <td>
+                                    <%=dateFormat(user.updatedAt,2)%>
+                                </td>
+                                <td>
+                                    <% if(user.verifiedAt !== null){ %>
+                                    <label class="badge badge-success">
+                                        <%=dateFormat(user.verifiedAt,3)%>
+                                    </label>
+                                    <% }else{ %>
+                                    <label class="badge badge-danger">Pending</label>
+                                    <% } %>
+                                </td>
+                                <td class="text-center">
+                                    <a href="/" class="btn btn-warning">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="/" class="btn btn-primary">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a href="/" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("../layout/footer") %>
+<script>
+(function($) {
+    'use strict';
+    $(function() {
+        $('#order-listing').DataTable({
+            "aLengthMenu": [
+                [5, 10, 15, -1],
+                [5, 10, 15, "All"]
+            ],
+            "iDisplayLength": 10,
+            "stateSave": true,
+            "language": {
+                search: ""
+            }
+        });
+        $('#order-listing').each(function() {
+            var datatable = $(this);
+            // SEARCH - Add the placeholder for Search and Turn this into in-line form control
+            var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');
+            search_input.attr('placeholder', 'Search');
+            search_input.removeClass('form-control-sm');
+            // LENGTH - Inline-Form control
+            var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
+            length_sel.removeClass('form-control-sm');
+        });
+    });
+})(jQuery);
+
+</script>
+<%- include("../layout/close") %>
