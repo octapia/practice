@@ -1,19 +1,20 @@
 import React from "react";
 import "./Tweet.css";
+import moment from "moment";
 
-function Tweet() {
+function Tweet({ tweet }) {
   return (
     <div className="tweet">
-      <Avatar />
+      <Avatar hash={tweet.gravatar} />
       <div className="content">
-        <Author />
-        <Time />
-        <Message />
+        <Author author={tweet.author} />
+        <Time time={tweet.timestamp} />
+        <Message message={tweet.message} />
 
         <div className="buttons">
           <ReplyButton />
-          <RetweetButton />
-          <LikeButton />
+          <RetweetButton count={tweet.retweets}/>
+          <LikeButton count={tweet.likes}/>
           <MoreOptionButton />
         </div>
       </div>
@@ -23,34 +24,58 @@ function Tweet() {
 
 export default Tweet;
 
-function Avatar() {
-  return (
-    <img
-      src="https://www.gravatar.com/avatar/nothing"
-      className="avatar"
-      alt="avatar"
-    />
-  );
+// ************Micro-components***************
+
+
+function Avatar({ hash }) {
+  const url = `https://www.gravatar.com/avatar/${hash}`;
+  return <img src={url} className="avatar" alt="avatar" />;
 }
 
-function Message() {
-  return <div className="message">This is less than 140 characters.</div>;
-}
-function Author() {
+const Message = ({ message }) => <div className="message">{message}</div>;
+
+function Author({ author }) {
+  const { name, handle } = author;
   return (
     <div className="author">
-      <span className="name">Tahidur_rahman</span>
-      <span className="handle">@my_handle</span>
+      <span className="name">{name}</span>
+      <span className="handle">@{handle}</span>
     </div>
   );
 }
 
-const Time = () => <span className="time">3h ago</span>;
+const Time = ({time}) => {
+    const timestamp = moment(time).fromNow();
+return (<span className="time">{timestamp}</span>)
+}
 
 const ReplyButton = () => <i className="fa fa-reply reply-button"></i>;
 
-const RetweetButton = () => <i className="fa fa-retweet retweet-button"></i>;
-const LikeButton = () => <i className="fa fa-heart like-button"></i>;
-const MoreOptionButton = () => (
+// ************Retweet***************
+const RetweetButton = ({count}) =>{ 
+    
+const getRetweeet = count => count>0 ? <span className="retweet-count">{count}</span>:null;
+
+return (
+    <span className="retweet-button">
+        <i className="fa fa-retweet"></i>
+        {getRetweeet(count)}
+    </span>
+)
+}
+
+// ************like***************
+
+const LikeButton = ({count}) => {
+
+return (
+    <span className="like-button">
+        <i className="fa fa-heart"></i>
+        {count>0 && <span className="like-count">{count}</span>}
+    </span>
+)
+}
+
+const MoreOptionButton = () =>{ return (
   <i className="fa fa-ellipsis-h more-option-button"></i>
-);
+)}
