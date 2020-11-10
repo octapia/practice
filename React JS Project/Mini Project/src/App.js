@@ -1,13 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
-import Contact from './Components/Contact'
+import Tweet from './Components/Tweet'
 
-export default class App extends Component {
-    render() {
+export default function App (props) {
+    
+
         return (
             <>
-                <Contact />
+           <Tweet />
             </>
         )
-    }
 }
+
+
