@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
+import './App.css'
+import Contact from './Components/Contact'
 
-import PostForm from "./PostForm";
-
-const App = ()=> <PostForm />
-
-export default App;
+export default class App extends Component {
+    render() {
+        return (
+            <>
+                <Contact />
+            </>
+        )
+    }
+}
