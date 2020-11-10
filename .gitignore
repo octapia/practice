@@ -1,4 +1,5 @@
 # Dependency directories
+/octapia-company-website-using-react
 /node_modules
 /ejs-engine/node_modules
 /mailer/node_modules
