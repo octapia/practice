@@ -1,26 +1,42 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import './App.css'
-import Button from './Components/Button'
+import FileList from './Components/FileList'
 
-export default function App () {
+export default function App() {
+    return (
+        <>
+          <FileList files={testFiles}/> 
+        </>
+    )
+}
+
+const testFiles = [
+    {
+    id: 1,
+    name: 'src',
+    type: 'folder',
+    updated_at: "2016-07-11 21:24:00",
+    latestCommit: {
+    message: 'Initial commit'
+    }
     
-
-        return (
-            <>
-           <Button>
-               <div>divv1</div>
-               <div>divv2</div>
-               <div>divv3</div>
-               <div>divv4</div>
-               <h5>h1</h5>
-               <h5>h2</h5>
-               <h5>h3</h5>
-               <h5>h4</h5>
-           </Button>
-            </>
-        )
-
-
-        }
-
+    },
+    {
+    id: 2,
+    name: 'tests',
+    type: 'folder',
+    updated_at: "2016-07-11 21:24:00",
+    latestCommit: {
+    message: 'Initial commit'
+    }
+    },
+    {
+    id: 3,
+    name: 'README',
+    type: 'file',
+    updated_at: "2016-07-18 21:24:00",
+    latestCommit: {
+    message: 'Added a readme'
+    }
+    },
+    ];
+    

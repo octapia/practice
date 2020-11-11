@@ -1,0 +1,30 @@
+.fileList {
+    font-family: Helvetica, sans-serif;
+    width: 100%;
+    max-width: 980px;
+    color: #333;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    }
+    .fileList td {
+    border-top: 1px solid #ccc;
+    }
+    .fileName {
+    padding: 4px;
+    max-width: 180px;
+    }
+        .fileIcon{
+        color: #508FCA;
+        }
+        .commitMessage {
+            max-width: 442px;
+            padding-left: 10px;
+            overflow: hidden;
+            }
+
+            .time {
+                width: 125px;
+                text-align: right;
+                padding-right: 4px;
+                }
