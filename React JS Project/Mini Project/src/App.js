@@ -1,27 +1,22 @@
 import React from 'react'
 import './App.css'
-import Tweet from './Components/Tweet'
+import CreditCard from './Components/CreditCard'
 
 export default function App (props) {
     
 
         return (
             <>
-           <Tweet tweet={testTweet}/>
+           <CreditCard cardInfo={info}/>
             </>
         )
 }
 
 
-const testTweet = {
-    message : 'Something About cats',
-    gravatar : "xyz",
-    author  : {
-        handle : "catperson",
-        name : "IAMA CAT PERSON"
-    },
-    likes :2 ,
-    retweets : 1,
-    timestamp : '2015-07-30 12:23:33'
+const info = {
+    person : 'Daniel Masqurido',
+    expDate: '09/22',
+    cardNo : '1232-1343-3455-2334',
+    bank   : 'Islami Bank'
 }
 
