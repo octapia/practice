@@ -1,22 +1,26 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import './App.css'
-import CreditCard from './Components/CreditCard'
+import Button from './Components/Button'
 
-export default function App (props) {
+export default function App () {
     
 
         return (
             <>
-           <CreditCard cardInfo={info}/>
+           <Button>
+               <div>divv1</div>
+               <div>divv2</div>
+               <div>divv3</div>
+               <div>divv4</div>
+               <h5>h1</h5>
+               <h5>h2</h5>
+               <h5>h3</h5>
+               <h5>h4</h5>
+           </Button>
             </>
         )
-}
 
 
-const info = {
-    person : 'Daniel Masqurido',
-    expDate: '09/22',
-    cardNo : '1232-1343-3455-2334',
-    bank   : 'Islami Bank'
-}
+        }
 
