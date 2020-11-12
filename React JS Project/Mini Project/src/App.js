@@ -1,42 +1,80 @@
 import React from 'react'
-import FileList from './Components/FileList'
+import HackerNews from './Components/HackerNews'
 
 export default function App() {
     return (
         <>
-          <FileList files={testFiles}/> 
+           <HackerNews info={realInfo}/> 
         </>
     )
 }
 
-const testFiles = [
+const realInfo = [
     {
-    id: 1,
-    name: 'src',
-    type: 'folder',
-    updated_at: "2016-07-11 21:24:00",
-    latestCommit: {
-    message: 'Initial commit'
-    }
-    
+        heading : 'Postgres Observability',
+        person  : 'fforflo',
+        link    : 'pgstats.dev',
+        time    : '2020-11-11T14:29:40+00:00',
+        status  : {
+            upvote  : 3 ,
+            comment : 22,
+            point   : 11
+        }
     },
     {
-    id: 2,
-    name: 'tests',
-    type: 'folder',
-    updated_at: "2016-07-11 21:24:00",
-    latestCommit: {
-    message: 'Initial commit'
-    }
+        heading : 'Apple\'s Shifting Differentiation',
+        person  : 'osdfrflo',
+        link    : 'tats.dev',
+        time    : '2020-11-11T14:29:40+00:00',
+        status  : {
+            upvote  : 66 ,
+            comment : 32,
+            point   : 31
+        }
     },
     {
-    id: 3,
-    name: 'README',
-    type: 'file',
-    updated_at: "2016-07-18 21:24:00",
-    latestCommit: {
-    message: 'Added a readme'
-    }
+        heading : 'es servability',
+        person  : 'sorflo',
+        link    : 'aastats.dev',
+        time    : '2020-11-11T14:29:40+00:00',
+        status  : {
+            upvote  : 31 ,
+            comment : 2,
+            point   : 21
+        }
     },
-    ];
-    
+    {
+        heading : 'Postgres Observability',
+        person  : 'fforlo',
+        link    : 'pgstats.dev',
+        time    : '2020-11-11T14:29:40+00:00',
+        status  : {
+            upvote  : 3 ,
+            comment : 22,
+            point   : 11
+        }
+    },
+    {
+        heading : 'Apple\'s Shifting Differentiation',
+        person  : 'osdrflo',
+        link    : 'tats.dev',
+        time    : '2020-11-11T14:29:40+00:00',
+        status  : {
+            upvote  : 66 ,
+            comment : 32,
+            point   : 31
+        }
+    },
+    {
+        heading : 'es servability',
+        person  : 'sorfo',
+        link    : 'aastats.dev',
+        time    : '2020-11-11T14:29:40+00:00',
+        status  : {
+            upvote  : 31 ,
+            comment : 2,
+            point   : 21
+        }
+    }
+]
+
