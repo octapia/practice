@@ -5,11 +5,13 @@ const header= {
     "alg": "HS265",
     "type": "JWT"
 }
-
-const headerB64 = base64url(JSON.stringifi(header))
-
+const headerB64 = base64url(JSON.stringify(header))
 
 const payload = { foo: "Bar"}
-const paylodB64 = base64url(JSON.stringifi(payload))
+const paylodB64 = base64url(JSON.stringify(payload))
 
-console.log(headerB64)
+const secret = "my secret"
+const content = `${headerB64}.${paylodB64}`
+const signature = crypto.createHmac('sha265', secret).update(content).digest('hex')
+const token = `${content}.${signature}`
+console.log(token)
