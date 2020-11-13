@@ -1,0 +1,17 @@
+.App nav {
+  display: flex;
+  justify-content: space-between;
+}
+.App nav a {
+  cursor: pointer;
+  padding: 10px 20px;
+  display: inline-block;
+  background-color: #f1f1f1;
+  font-size: 20px;
+}
+.App nav a:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.App nav a:active {
+  transform: translateY(1px);
+}
