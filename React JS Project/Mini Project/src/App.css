@@ -13,3 +13,19 @@ body{
   width:auto;
   font-family:'Roboto Slab', serif;
 }
+.main{
+  display: flex;
+  flex-direction: row;
+}
+.cont{
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  margin:0px 50px;
+}
+button{
+  height:25px;
+width:25px;
+font-size: 20px;
+font-weight: bold;
+}
