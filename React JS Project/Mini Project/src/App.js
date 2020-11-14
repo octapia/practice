@@ -1,30 +1,25 @@
 import React,{useState} from 'react'
-import './App.css'
+import Nav from "./Components/Nav";
 export default function App() {
-const [count, setCount] = useState({volume: 20,
-                                    bass: 20,
-                                    mid: 20,
-                                    treble: 20
-                                    })                       
+    const [activeTab, setActiveTab] = useState('cart')
     return (
-        <>
-            <Row count={count.volume} setCount={setCount} name="volume"/>
-            <Row count={count.bass} setCount={setCount} name="bass"/>
-            <Row count={count.mid} setCount={setCount} name="mid"/>
-            <Row count={count.treble} setCount={setCount} name="treble"/>
-        </>
+        <div className="App">
+            <Nav activeTab={activeTab}
+                 onTabChange={setActiveTab}/>
+            <main className="app-content">
+               <Content tab={activeTab} />
+            </main>
+        </div>
     )
 }
-const Up = ({count,setCount}) => <button onClick={console.log(count)}>+</button>
-const Down = ({count,setCount}) => <button onClick={()=>setCount(count-1)}>-</button>
 
-const Row = ({count,setCount,name}) => {
-   return <div className="main">
-        <Up setCount={setCount} count={count}/>
-        <div className="cont">
-            <div className="ele">{count}</div>
-            <div className="ele">{name}</div>
-        </div>
-        <Down setCount={setCount} count={count}/>
-    </div>
+
+const Content = ({tab}) => {
+    switch(tab) {
+        default : 
+        case 'items' :
+            return <div>Items</div>;
+        case 'cart'  :
+            return <div>Cart</div>;
+    }
 }
