@@ -22,7 +22,7 @@ const { users } = require(`./controllers/UserController`);
 
 router.use(`/admin`, [redirectToLoginPage]);
 router.use(`/login`, [redirectToAdminPage]);
-router.use(`/`, [passUserinfoToViews]);
+router.use(`/admin`, [passUserinfoToViews]);
 
 /* routes for frontend */
 

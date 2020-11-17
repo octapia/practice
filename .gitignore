@@ -9,3 +9,10 @@
 /api/.env
 /blog/node_modules
 /blog/.env
+/blog/.git
+/jwt/node_modules
+/jwt/.git
+/youtube-heroku-netlify
+/octapia-company-website-using-react
+/node-running-heroku/.git
+/node-running-heroku/node_modules

@@ -1,5 +1,6 @@
-const { dateFormat
- } = require(`../utils/helpers`);
+const {
+    dateFormat
+} = require(`../utils/helpers`);
 
 const redirectToLoginPage = (req, res, next) => {
     if (req.session.isLoggedIn) {
@@ -8,7 +9,7 @@ const redirectToLoginPage = (req, res, next) => {
     return res.redirect(`/login`);
 }
 const redirectToAdminPage = (req, res, next) => {
-    if (req.session.isLoggedIn) {
+    if (req.session.isLoggedIn == `undefined`) {
         return res.redirect(`/admin`);
     }
     return next();

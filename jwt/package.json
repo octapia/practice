@@ -1,18 +1,19 @@
 {
-  "name": "mongo",
+  "name": "jwt",
+  "author": "mister.sakil.cse@gmail.com",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon subdoc.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.14"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
