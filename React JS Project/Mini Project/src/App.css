@@ -8,6 +8,7 @@ body{
   display:flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   color:black;
   height:100vh;
   width:auto;
