@@ -3,14 +3,15 @@ import { Button, Icon, TextField } from "@material-ui/core";
 import "./App.css";
 import Todo from "./Components/Todo";
 import db from './Firebase'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/firestore';
 
 export default function App() {
   const [task, setTask] = useState([]);
   const [input, setInput] = useState("");
   useEffect(()=>{
     db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
-      setTask(snapshot.docs.map(doc=>doc.data().todo))
+      setTask(snapshot.docs.map(doc=>({id:doc.id,todo:doc.data().todo})))
     })
   },[])
 
@@ -54,7 +55,7 @@ export default function App() {
         </Button>
       </form>
 
-      <ul>
+      <ul style={{height:'70vh'}}>
         {task.map((todo, index) => (
           <Todo todo={todo} key={index} serial={index} />
         ))}
