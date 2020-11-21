@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  position: fixed;
+  left: 0px;
+  padding: 20px;
+  background-image: url(https://image.freepik.com/free-vector/abstract-blue-geometric-shapes-background_1035-17545.jpg);
+}
+
+.NavLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border: 5px solid white;
+  list-style: none;
+  border-radius: 10px;
+}
+.NavLink:hover{
+  color:fuchsia
+}
+.NavLink > i {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 40px;
+}

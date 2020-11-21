@@ -1,24 +1,18 @@
-
-*{ margin:0;
-   padding:0
-  }
-
-body{
-  font-family: sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Texturina&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.nav{
-  height:10vh;
-  background-color:black;
-  display: block;
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Texturina", serif;
+}
+.main {
+  display: flex;
+  align-items: stretch;
   width: 100%;
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-}
-.NavLink{
-  list-style: none;
-display: inline;
-font-size: 20px;
-color: white;
-text-decoration: none;
+  position: relative;
 }
