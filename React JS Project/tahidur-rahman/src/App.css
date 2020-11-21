@@ -10,28 +10,15 @@ body{
   height:10vh;
   background-color:black;
   display: block;
-}
-ul{
   width: 100%;
 display: flex;
 justify-content: space-evenly;
 align-items: center;
 }
-li{
+.NavLink{
   list-style: none;
 display: inline;
 font-size: 20px;
 color: white;
-}
-.home{
-  height:90vh;
-  background-color: steelblue;
-}
-.about{
-  height:80vh;
-  background-color: rebeccapurple;
-}
-.users{
-  height:80vh;
-  background-color: violet;
+text-decoration: none;
 }

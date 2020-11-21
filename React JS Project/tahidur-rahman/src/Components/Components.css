@@ -1,0 +1,17 @@
+
+.home{
+    height:90vh;
+    background-color: steelblue;
+  }
+  .skill{
+    height:80vh;
+    background-color: rebeccapurple;
+  }
+  .projects{
+    height:80vh;
+    background-color: violet;
+  }
+  .contact{
+    height:80vh;
+    background-color: saddlebrown;
+  }
