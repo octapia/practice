@@ -5,24 +5,20 @@
 .contact {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   min-width: 100vw;
   color: white;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  z-index: -1;
 }
-
 /* HOME PAGE STYLING */
-.home {
-  background-image: url("https://cdn.pixabay.com/photo/2016/07/22/16/29/fog-1535201_1280.jpg");
-}
 
-/* SKILL PAGE STYLING */
 
-.skill {
-  background-image: url("https://cdn.pixabay.com/photo/2018/08/11/10/42/action-3598415_960_720.jpg");
-}
 
 /* PROJECT PAGE STYLING */
 
@@ -34,4 +30,86 @@
 
 .contact {
   background-image: url("https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+}
+#particles-js {
+  background-image: url("https://cdn.pixabay.com/photo/2016/07/22/16/29/fog-1535201_1280.jpg");
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.name {
+  text-align: center;
+  animation-name: bounce-top;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  font-size: 50px;
+}
+@keyframes bounce-top {
+  0%{
+    -webkit-transform: translateY(-45px);
+    transform: translateY(-45px);
+  }
+  25%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40%{
+    -webkit-transform: translateY(-24px);
+    transform: translateY(-24px);
+  }
+  55%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  65%{
+    -webkit-transform: translateY(-12px);
+    transform: translateY(-12px);
+  }
+  75%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  82%{
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  87%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  93%{
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  100%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.tahidur{
+  color:#a34bda
+}
+.rahman{
+  color:#13b49f
+}
+.element{
+  position: absolute;
+}
+.text{
+  color:#3aab34
+}
+
+/* SKILL PAGE STYLING */
+
+.skill {
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/11/10/42/action-3598415_960_720.jpg");
+  padding:200px;
+  position: fixed;
+  left:0
 }
