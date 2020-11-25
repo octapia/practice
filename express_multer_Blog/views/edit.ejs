@@ -8,38 +8,28 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/string-strip-html/dist/string-strip-html.umd.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
 
-    <title>New blog post</title>
+    <title>Edit blog post</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="mb-4 text-white"> New blog post</h1>
+        <h1 class="mb-4 text-white"> Editing  <%= blog.title %> </h1>
     </div>
-    <form  action="/blogs"  method="POST" enctype="multipart/form-data">
+    <form  method="POST" action="/blogs/<%= blog.id %>?_method=PUT">
         <div class="form-group">
-
             <label for="title" class="text-white"> Title</label>
-            <input type="text" class="form-control" placeholder="Title" name="title" required >
+            <input type="text" class="form-control" placeholder="Title" name="title" value=" <%= blog.title %> " required >
         </div>
-
         <div class="form-group">
-
             <label for="author" class="text-white">Author</label>
-            <input type="text" class="form-control" placeholder="author" name="author" required>
+            <input type="text" class="form-control" placeholder="author" name="author" value=" <%= blog.author %> " required>
         </div>
-
         <div class="form-group">
             <label for="description" class="text-white">Description</label>
-            <textarea name="description" class="form-control" placeholder="description" rows="6"></textarea>    
+            <textarea name="description" class="form-control" placeholder="description" rows="6" >
+             <%= blog.description %> 
+            </textarea>    
         </div>
-        <div class="form-group">
-
-            <label for="image" class="text-white">Upload Image</label>
-            <input type="file" class="form-control-file text-white" id="image" name="image" >
-        </div>
-
         <div class="form-group">
             <a href="/" class btn btn-warning> Cancel</a>
             <button type="submit" class="btn btn-primary">Save</button>
