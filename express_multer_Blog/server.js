@@ -1,40 +1,45 @@
 const express = require('express');
+const ejs = require('ejs')
 const mongoose = require('mongoose');
-const ejs =require('ejs')
-const bodyParser = require('body-parser')
-const blogRouter = require('./routes/blogs')
+const blogRouter = require('./routes/blogs');
+const log = require('./routes/log');
+const Blog = require('./models/Blog');
+// const logger = require('morgan')
+const methodOverride = require('method-override')
 
 const app = express()
-//connect mongoose
-// mongoose.connect('mongodb://localhost/crudblog', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// });
+// app.use(logger('dev'))
 
-const PORT = process.env.PORT || 5000
+// connect mongoose
+mongoose.connect('mongodb://localhost/crudblog',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex : true 
+})
 
-//set template engine
+//set view engine
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
 
-app.use(express.static("public"))
-app.use('/blogs', blogRouter);
+// method override for delete
+app.use(methodOverride('_method'))
+
+app.use(express.urlencoded({ extended: false }))
 
 //route for the index
-app.get('/', (request, response) => {
-    const blogs = []
-    response.render('test')
-});
-app.post('/',(req,res)=>{
-    console.log(req.body)
-    res.json({success:true})
-})
-// app.post('/blog',(req,res)=>{
-//     console.log(req.body)
-//     res.json({success:true})
-// })
+app.get('/', async (req, res) => {
+    let blogs = await Blog.find().sort({timeCreated : 'desc'})
 
-app.listen( PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`)
+    res.render('index', { blogs: blogs })
+});
+
+
+app.use(express.static("public"))
+
+app.use('/blogs', blogRouter);
+app.use('/users', log);
+
+//listen port
+const PORT = process.env.PORT || 3000
+app.listen(PORT, (req,res) =>{
+console.log(`Server is running on ${PORT}`)
 })
