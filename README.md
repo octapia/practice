@@ -5,3 +5,5 @@
 * Don't push any code on the master branch now..
 
 * For further information, U can contact Sakil Jomadder Bhai..
+
+* please push your code regularly.
