@@ -1,8 +1,7 @@
 /* General CSS */
 .home,
 .skill,
-.projects,
-.contact {
+.projects{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -14,17 +13,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: -1;
 }
 /* HOME PAGE STYLING */
 
 
 
-/* PROJECT PAGE STYLING */
-
-.projects {
-  background-image: url("https://cdn.pixabay.com/photo/2017/10/13/11/42/blue-2847413_960_720.jpg");
-}
 
 /* CONTACT PAGE STYLING */
 
@@ -38,6 +31,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: -99
 }
 .name {
   text-align: center;
@@ -109,7 +103,155 @@
 
 .skill {
   background-image: url("https://cdn.pixabay.com/photo/2018/08/11/10/42/action-3598415_960_720.jpg");
-  padding:200px;
+  padding:50px 200px;
   position: fixed;
   left:0
+}
+.skill > h2{
+  color:rgba(100,200, 324, 1);
+  font-weight: bold;
+  font-size:40px
+}
+
+progress{
+  width: 70%;
+  height: 30px;
+  box-shadow:0 2px 5px  #eee;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+progress[value]::-webkit-progress-value {
+  background-image:
+	   -webkit-linear-gradient(-45deg, 
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+
+}
+
+
+#label{
+  text-align: right;
+  color:white;
+  font-weight: bold;
+  margin-top:20px;
+  margin-bottom:5px
+}
+
+/* PROJECT PAGE STYLING */
+
+.projects {
+  background-image: url("https://cdn.pixabay.com/photo/2017/10/13/11/42/blue-2847413_960_720.jpg");
+}
+
+.projects>.container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin:10px;
+  width: 70%;
+}
+
+.projects >h2 {
+  font-size: 44px;
+  color:wheat;
+}
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.project{
+  border:2px solid #eee;
+  background-color: #222;
+  padding:20px;
+  opacity:0.8;
+  border-radius: 10px;
+  margin:10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projectImg{
+  width:300px;
+  border-radius:5px;
+}
+.link{
+  color:#fff
+}
+.contact{
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.contact-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 100%;
+  padding: 100px 0 100px 160px
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  background:rgb(218, 32, 79);
+  opacity:0.9;
+  padding:10px 20px;
+  border-radius: 10px;
+}
+.form>label{
+  margin:5px 0px 5px 10px;
+  font-weight: bold;
+  color: yellow;
+  letter-spacing: 3px;
+}
+.form input{
+  color:black;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 20px;
+  outline:rebeccapurple;
+  border:2px solid red;
+  border-radius: 5px;
+  padding:5px 10px;
+}
+.form textarea{
+  color:black;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 20px;
+  outline:rebeccapurple;
+  border:2px solid red;
+  border-radius: 5px;
+  padding:5px 10px;
+  height: 100px;
+}
+.form > button {
+  background-color:rgb(54, 141, 212);
+  margin-top:20px;
+  padding:5px 20px;
+  font-size: 25px;
+  font-weight: bold;
+  color:white;
+  border-radius: 5px;;
+  outline: none;
+  cursor: pointer;
+}
+.form >button:hover{
+  background-color: rgb(94, 141, 212);
+}
+.error {
+  color:green
+}
+
+.map{
+  width: 100%;
+}
+.fa-map-marker-alt{
+  color:red;
+  font-size:30px
 }

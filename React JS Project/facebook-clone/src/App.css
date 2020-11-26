@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.app__body{
+    display: flex;
+    align-items: flex-start;
+}
+.app{
+    background-color: #f1f2ff;
+    height: 100vh;
+}

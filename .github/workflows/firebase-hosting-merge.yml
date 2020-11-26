@@ -15,8 +15,8 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TODO_APP_3D848 }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FACEBOOK_CLONE_AD14C }}'
           channelId: live
-          projectId: todo-app-3d848
+          projectId: facebook-clone-ad14c
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
