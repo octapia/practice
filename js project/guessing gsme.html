@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let Winscore =0
+        let Lostscore =0
+for( let i = 1 ; i<=5 ; i++){
+    let inputNumber = parseInt(prompt("Enter number between 1-5"))
+    let randomNumber = Math.floor(Math.random()*5)+1
+
+    if(inputNumber == randomNumber){
+        console.log("You win." + "<br>")
+        Winscore++
+    }else{
+        console.log( "You have lost. Number is :" + randomNumber + "<br>")
+        Lostscore++
+    }
+}
+
+document.write( "You win :" + Winscore + "<br>")
+document.write( "You lost : " + Lostscore + "<br>")
+    </script>
+</body>
+</html>
