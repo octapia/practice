@@ -1,0 +1,130 @@
+/* NAVIGATION */
+
+.icon__nav{
+    height:80px;
+    display: flex;
+    flex-direction: row;
+    background-color: #555;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: fixed;
+    z-index: 11;
+    transition: 0.5s;
+}
+.icon__nav a{
+    color: #fff;
+    padding:20px 30px;
+    font-size: 28px;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width:900px){
+    .icon__nav a{
+        font-size: 23px;
+        padding:15px;
+    }
+}
+
+
+.icon__nav a:hover{
+    background-color: #000;
+    color:#ddd
+}
+.active{
+    background-color: #4CAF50;
+}
+.icon__nav a > div{
+    height:7px;
+    width:40px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+.toggleIcon i{
+    font-size: 40px;
+}
+.bar__container,.toggleIcon{
+    display: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:700px){
+    
+    .icon__nav > a{
+        display: none;
+    }
+.icon__nav > a:first-child{
+    display: block ;
+    cursor: pointer;
+    position: absolute;
+    left:0
+}
+.icon__nav>a:last-child{
+    display: block ;
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    right:0
+}
+
+.icon__nav.responsive{
+    display: block;
+    height: 100vh;
+}
+.icon__nav.responsive a:nth-child(2){
+    padding-top: 80px;
+}
+.icon__nav.responsive>a{
+    display: block;
+    text-align: center;
+}
+
+}
+/* .change .bar1 {
+    transform:rotate(-45deg)translate(-9px,6px)
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar3 {
+    transform:rotate(45deg)translate(-8px,-8px)
+} */
+
+/* HOME */
+h2{
+    margin: 10px;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: 20px 0px;
+    margin: auto;
+    position: relative;
+    padding-top:100px;
+}
+hr{
+    width: 100%;
+    ;
+    margin: 10px;
+}
+
+  #top__search{
+      right: 0;
+     position: fixed;
+     top: 80px;
+     z-index: 11;
+     color: #fff;
+     background: #141616;
+     padding: 10px 14px;
+     font-size: 15px;
+     border-radius: 5px;
+     outline: none;
+  }

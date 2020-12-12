@@ -1,0 +1,27 @@
+
+.social a{
+    position: fixed;
+text-decoration: none;
+color: #fff;
+background: #000;
+padding: 10px;
+border-radius: 5px 0 0 5px;
+right: -100px;
+transition: 0.5s;
+}
+.social a > i{
+    margin-right: 20px;
+}
+.social a:hover{
+    right: 0px;
+    transform: scale(1.2);
+}
+.social .facebook{ bottom:130px}
+.social .github{
+    bottom: 70px;
+    right: -78px;
+}
+.social .linkedin{
+    bottom: 10px;
+    right: -95px;
+}

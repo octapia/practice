@@ -1,0 +1,54 @@
+.overlay{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index: 1;
+    background: rgba(0,0,0,0.9);
+    height: 100%;
+    width: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.overlay__content{
+    position: relative;
+    top:25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 35px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.overlay a:hover, .overlay a:focus{
+    color:#f1f1f1
+}
+.overlay .close__btn{
+    position: absolute;
+    z-index: 11;
+    top:100px;
+    right: 45px;
+    font-size: 60px;
+    color:#fff
+}
+@media screen and (max-height:450px){
+    .overlay a{font-size: 20px;}
+    .overlay .close__btn{
+        font-size: 40px;
+        top: 105px;
+        right: 30px;
+    }
+}
+
+.open{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 14px;
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+#search__menu{
+    width: 100%;
+    padding: 10px 14px;
+    border:2px solid blue;
+    font-size: 17px;
+    height:550px
+}
+.my__menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#search{
+    background: #000;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: medium;
+    border-radius: 5px;
+}
+
+.my__menu li a{
+    text-decoration: none;
+    padding:15px;
+    color:black;
+    display: block;
+    background: #eee;
+}
+.my__menu li a:hover{
+    background: #ddd;
+}
+h2{
+    text-align: center;
+}

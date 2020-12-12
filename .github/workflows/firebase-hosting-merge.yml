@@ -15,8 +15,8 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FACEBOOK_CLONE_AD14C }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MESSENGER_CLONE_D5721 }}'
           channelId: live
-          projectId: facebook-clone-ad14c
+          projectId: messenger-clone-d5721
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
