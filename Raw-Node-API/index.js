@@ -24,12 +24,18 @@ app.handleReqRes= (req , res) =>{
     // handle request
     const parsedUrl = url.parse(req.url, true)
     const path = parsedUrl.pathname
-    const trimedpath = path.replace(/\/+|\/+$/g, '')
+    const trimedpath = path.replace(/^\/+|\/+$/g, '')
     const method = req.method.toLowerCase()
     const queryStringObject = parsedUrl.query
-    const headerObject = req.headers
-    const decodar = new StringDecoder('utf-8')
-    const realData = decodar.decode
+    const headerObject = req.headers;
+    const decoder = new StringDecoder('utf-8')
+    const realData = ''
+    req.on('data' , (buffer) => {
+    realData += decoder.write(buffer)})
+
+    req.on('end', () => {
+        realData += decoder.end()
+    })
 
     console.log(parsedUrl)
     res.end('Hello world')
