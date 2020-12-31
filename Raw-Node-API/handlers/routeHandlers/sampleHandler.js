@@ -1,9 +1,13 @@
 
 
-const handler = {}
+const handler = {};
 
-handler.sampleHandler =() =>{
-    console.log('Sample')
-}
+handler.sampleHandler = (requestProperties , callback) =>{
+    console.log(requestProperties);
 
-module.exports = handler
+    callback( 200 , {
+        message : 'sample url',
+    });
+};
+
+module.exports = handler;
