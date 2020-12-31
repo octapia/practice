@@ -4,8 +4,10 @@
 const http = require('http')
 const { handleReqRes } = require('./handlers/routeHandlers/handleReqRes')
 
+// app object scaffolding
 const app = {}
 
+// configuration 
 app.config = {
     port:3000
 }
