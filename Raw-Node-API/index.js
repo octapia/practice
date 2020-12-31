@@ -18,7 +18,6 @@ app.creatServer = () => {
     server.listen(app.config.port, ()=>{
         console.log(`Listening to port ${app.config.port}`)
     })
-
 }
 
 // handle Request Response
