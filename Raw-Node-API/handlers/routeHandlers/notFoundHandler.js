@@ -4,7 +4,7 @@ const handler = {}
 
 handler.notFoundHandler =(requestProperties , callback ) =>{
     callback( 404 , { 
-        message : 'Not Found'
+        message : 'Your requested url Not Found'
     })
 }
 
