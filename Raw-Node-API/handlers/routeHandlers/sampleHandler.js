@@ -6,7 +6,7 @@ handler.sampleHandler = (requestProperties , callback) =>{
     console.log(requestProperties);
 
     callback( 200 , {
-        message : 'sample url',
+        message : 'This is a sample url'
     });
 };
 
